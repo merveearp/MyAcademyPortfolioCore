@@ -7,7 +7,7 @@ namespace PortfolioWeb.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-QN7HAT1\\SQLEXPRESS; database=MyAcademyPortfolioDb; integrated security=true; trustServerCertificate=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-QN7HAT1\\MSSQLSERVER15; database=MyAcademyPortfolioDb; integrated security=true; trustServerCertificate=true");
         }
 
         //pluralizen

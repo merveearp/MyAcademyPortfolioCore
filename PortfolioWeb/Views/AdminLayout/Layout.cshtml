@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- [Head] start -->
+@await Component.InvokeAsync("_AdminLayoutHeadComponent");
+<!-- [Head] end -->
+
+<!-- [Body] Start -->
+
+<body data-pc-preset="preset-1" data-pc-direction="ltr" data-pc-theme="light">
+
+  <!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+ <!-- [ Sidebar Menu ] start -->
+
+ @await Component.InvokeAsync("_AdminLayoutSidebarComponent");
+
+<<!-- [ Sidebar Menu ] end --> 
+
+<!-- [ Header Topbar ] start -->
+@await Component.InvokeAsync("_AdminLayoutHeaderComponent");
+<!-- [ Header ] end -->
+
+  <!-- [ Main Content ] start -->
+    <div class="pc-container">
+        <div class="pc-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h3 class="m-b-10">@ViewData["Title"]</h3>
+                            </div>
+                            <br />
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/Category/Index/">Anasayfa</a></li>
+                                <li class="breadcrumb-item"><a href="#">@ViewData["Title"]</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <!-- [ Main Content ] start -->
+            @RenderBody()
+
+        </div>
+    </div>
+ 
+  <!-- [ Main Content ] end -->
+    @await Component.InvokeAsync("_AdminLayoutFooterComponent");
+  
+    
+    <!-- [Page Specific JS] start -->
+  <script src="~/Mantis-Bootstrap-1.0.0/dist/assets/js/plugins/apexcharts.min.js"></script>
+  <script src="~/Mantis-Bootstrap-1.0.0/dist/assets/js/pages/dashboard-default.js"></script>
+  <!-- [Page Specific JS] end -->
+ 
+  <!-- Required Js -->
+  
+  @await Component.InvokeAsync("_AdminLayoutScriptsComponent");
+   
+</body>
+<!-- [Body] end -->
+
+</html>
