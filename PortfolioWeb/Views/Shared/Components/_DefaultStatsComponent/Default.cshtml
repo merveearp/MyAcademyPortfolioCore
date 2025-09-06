@@ -1,0 +1,33 @@
+﻿@model List<Stat>
+@*
+    _DefaultStatsComponent
+*@
+
+    <section id="stats" class="stats section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>İstatistikler</h2>
+        <h5>GitHub’daki projelerim, LinkedIn’de büyüyen profesyonel ağım, katıldığım eğitimler ve kazandığım sertifikalar ile sürekli gelişen bir yazılım geliştirici.</h5>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+    @foreach(var item in Model)
+    {
+            <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="@item.StatValue" data-purecounter-duration="1" class="purecounter"></span>
+                <h4>@item.StatName</h4>
+            </div>
+            </div>
+    }
+          <!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section>

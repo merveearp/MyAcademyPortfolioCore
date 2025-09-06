@@ -22,8 +22,8 @@
             <td>@count</td>
             <td>@item.CategoryName</td>
             <td>
-                <a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger">Sil</a>
-                <a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-outline-info">Güncelle</a>
+                <a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger d-inline-flex"><i class="ti ti-alert-triangle me-1"></i>Sil</a>
+                <a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-success d-inline-flex"><i class="ti ti-circle-check me-1"></i>Güncelle</a>
 
             </td>
             
@@ -32,5 +32,5 @@
 
 </table>
 
-<a href="/Category/CreateCategory" class="btn btn-outline-primary">Yeni Kategori Oluştur</a>
+<a href="/Category/CreateCategory" class="btn btn-primary"><i class="ti ti-file-plus"></i>Yeni Kategori Oluştur</a>
 

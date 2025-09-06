@@ -1,0 +1,119 @@
+﻿@model List<Stat>
+@{
+    ViewData["Title"] = "İstatistikler";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+@{
+    // İkon classları
+    var iconCycle = new[] { "fa-linkedin", "ti ti-vocabulary", "ti ti-viewport-wide", "ti ti-text-wrap", "fa-github", "ti ti-stack", "fa-desktop" };
+
+    // Badge (renk) classları
+    var badgeCycle = new[] { 
+                             "bg-primary",
+                            "bg-info",
+                             "bg-warning",
+                             "bg-success",
+                             "bg-dark",
+                             "bg-danger",
+                             "bg-secondary" };
+    int idx = 0;
+}
+<div class="row">
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-2 f-w-400 text-muted">Proje Sayısı</h4>
+                <h3 class="mb-3">
+                    <span class="badge bg-light-primary border border-primary">
+                        <i class="ti ti-chart-bar"></i> @ViewBag.projectCount
+                    </span>
+                </h3>              
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-2 f-w-400 text-muted">Yetenek Ortalaması</h4>
+                <h3 class="mb-3">
+                    <span class="badge bg-light-success border border-success">
+                        <i class="ti ti-separator-vertical"></i> @ViewBag.skillAverage
+                    </span>
+                </h3>
+               
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-2 f-w-400 text-muted">Okunmamış Mesaj Sayısı</h4>
+                <h3 class="mb-3">
+                     <span class="badge bg-light-warning border border-warning">
+                        <i class="ti ti-message-2"></i> @ViewBag.unreadMessageCount
+                    </span>
+                </h3>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-2 f-w-400 text-muted">Son Mesaj Gönderen Kişi</h4>
+                <h3 class="mb-3">
+                     <span class="badge bg-light-danger border border-danger">
+                        <i class="ti ti-mail-opened"></i> @ViewBag.lastMessageOwner
+                    </span>
+                </h3>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-2 f-w-400 text-muted">Kaç Yıldır Sektördeyim</h4>
+                <h3 class="mb-3">
+                    <span class="badge bg-light-danger border border-danger">
+                        <i class="ti ti-stack"></i> @ViewBag.experienceYear
+                    </span>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    </div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        var icon = iconCycle[idx % iconCycle.Length];
+        var badge = badgeCycle[idx % badgeCycle.Length];
+        idx++;
+@* 
+        <div class="col-md-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mb-2 f-w-400 text-muted">@item.StatName</h4>
+                    <h3 class="mb-3">
+                        <span class="badge @badge">
+                            <i class="@icon"></i> @item.StatValue+
+                        </span>
+                    </h3>
+                </div>
+            </div>
+        </div> *@
+        <div class="col-md-6 col-xl-3">
+            <div class="card social-widget-card @badge">
+                <div class="card-body">
+                    <h3 class="text-white m-0">@item.StatValue +</h3>
+                    <span class="m-t-10">@item.StatName</span>
+                    <i class="fab @icon"></i>
+                </div>
+            </div>
+        </div>
+      
+    }
+   
+</div>

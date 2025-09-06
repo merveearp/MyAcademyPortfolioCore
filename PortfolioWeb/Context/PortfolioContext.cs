@@ -10,6 +10,7 @@ namespace PortfolioWeb.Context
             optionsBuilder.UseSqlServer("server=DESKTOP-QN7HAT1\\MSSQLSERVER15; database=MyAcademyPortfolioDb; integrated security=true; trustServerCertificate=true");
         }
 
+
         //pluralizen
         public DbSet<About> Abouts { get; set; }
         public DbSet<Banner> Banners { get; set; }
@@ -17,6 +18,13 @@ namespace PortfolioWeb.Context
         public DbSet<Education> Educations { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<UserMessage> UserMessages { get; set; }
+        public DbSet<ContactInfo> ContactInfos { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Stat> Stats { get; set; }
 
 
     }

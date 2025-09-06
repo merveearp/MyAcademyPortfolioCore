@@ -1,0 +1,29 @@
+﻿@model Skill
+@{
+    ViewData["Title"] = "Yetenek Ekleme Sayfası";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="card shadow p-4">
+
+    <form asp-action="CreateSkill" asp-controller="Skill" method="post">
+        <div class="form-group mb-3">
+            <label asp-for="Title" class="form-label">Yetenek Adı</label>
+            <input asp-for="Title" class="form-control" placeholder="Örn: C#, SQL, React" />
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Percentage" class="form-label">Yüzdelik Beceri</label>
+            <input asp-for="Percentage" type="number" min="0" max="100" class="form-control" placeholder="0 - 100" />
+            <span class="text-danger" asp-validation-for="Percentage"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary d-inline-flex">
+            <i class="ti ti-device-floppy me-1"></i> Kaydet
+        </button>
+        <a href="/Skill/Index" class="btn btn-warning d-inline-flex ms-2">
+            <i class="ti ti-arrow-back-up me-1"></i> Geri Dön
+        </a>
+    </form>
+</div>

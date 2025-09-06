@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <!-- [Head] start -->
 @await Component.InvokeAsync("_AdminLayoutHeadComponent");
 <!-- [Head] end -->
@@ -20,11 +21,11 @@
   </div>
 </div>
 <!-- [ Pre-loader ] End -->
- <!-- [ Sidebar Menu ] start -->
 
- @await Component.InvokeAsync("_AdminLayoutSidebarComponent");
-
-<<!-- [ Sidebar Menu ] end --> 
+    <!-- [ Sidebar Menu ] start -->
+ 
+    @await Component.InvokeAsync("_AdminLayoutNavbarComponent");
+    <!-- [ Sidebar Menu ] end -->
 
 <!-- [ Header Topbar ] start -->
 @await Component.InvokeAsync("_AdminLayoutHeaderComponent");
@@ -52,7 +53,7 @@
             </div>
             <!-- [ breadcrumb ] end -->
             <!-- [ Main Content ] start -->
-            @RenderBody()
+   @RenderBody()
 
         </div>
     </div>

@@ -1,0 +1,109 @@
+﻿
+@*
+    _AdminLayoutNavbarComponent
+*@
+   <nav class="pc-sidebar">
+        <div class="navbar-wrapper">
+        <a href="/Default/Index" class="m-header d-flex align-items-center text-decoration-none">
+            <i class="ti ti-user-check user-icon"></i>
+            <span class="logo-text">Admin Paneli</span>
+        </a>
+
+            <style>
+                .m-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px; /* ikon ile yazı arasındaki boşluk */
+                }
+
+                    .m-header .user-icon {
+                        font-size: 28px; /* ikon boyutu */
+                        color: #1a1a1a; /* ikon rengi */
+                    }
+
+                    .m-header .logo-text {
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #1a1a1a;
+                    }
+            </style>
+
+            <div class="navbar-content">
+                <ul class="pc-navbar">
+                    <li class="pc-item">
+                        <a href="/Statistics/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-home-2"></i></span>
+                            <span class="pc-mtext">Anasayfa</span>
+                        </a>
+                    </li> 
+                    <li class="pc-item">
+                        <a href="/Category/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-clipboard-list"></i></span>
+                            <span class="pc-mtext">Kategoriler</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="/Project/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-ad-2"></i></span>
+                            <span class="pc-mtext">Projelerim</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="/Skill/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-apps"></i></span>
+                            <span class="pc-mtext">Yeteneklerim</span>
+                        </a>
+                    </li>
+                   @*  <li class="pc-item">
+                        <a href="/Project/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-blockquote"></i></span>
+                            <span class="pc-mtext">Öne Çıkan Alan</span>
+                        </a>
+                    </li> *@
+                <li class="pc-item">
+                    <a href="/SocialMedia/Index" class="pc-link">
+                        <span class="pc-micon"><i class="ti ti-blockquote"></i></span>
+                        <span class="pc-mtext">Sosyal Medya</span>
+                    </a>
+                </li>
+                    <li class="pc-item">
+                        <a href="/About/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-brand-twitch"></i></span>
+                            <span class="pc-mtext">Hakkımda</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="/Experience/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-checks"></i></span>
+                            <span class="pc-mtext">Deneyimlerim</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="/Education/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-clipboard-list"></i></span>
+                            <span class="pc-mtext">Eğitim Hayatım</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="/Testimonial/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-license"></i></span>
+                            <span class="pc-mtext">Referanslarım</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="/Message/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-receipt"></i></span>
+                            <span class="pc-mtext">Gelen Mesajlar</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="/Contact/Index" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-float-left"></i></span>
+                            <span class="pc-mtext">İletişim Bilgileri</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>

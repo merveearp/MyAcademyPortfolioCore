@@ -1,0 +1,61 @@
+﻿@model (List<Education> Educations, List<Experience> Experiences)
+@*
+_DefaultResumeComponent
+*@
+
+<section id="resume" class="resume section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Özgeçmiş</h2>
+        <h5>Kariyer Yolculuğum</h5>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row">
+
+           
+            
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="resume-title">Eğitim</h3>
+             @foreach(var item in Model.Educations)
+             {
+     
+                <div class="resume-item">
+                    <h4>@item.Title</h4>
+                    <h5>@item.StartYear-@item.EndYear</h5>
+                    <p><em>@item.SchoolName - @item.Department</em></p>
+                    <p>@item.Description</p>
+                    </div>
+                
+
+                <!-- Edn Resume Item -->
+              }
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="resume-title">Deneyim</h3>
+                @foreach (var item in Model.Experiences)
+                {
+
+                    <div class="resume-item">
+                        <h4>@item.Title</h4>
+                        <h5>@item.StartYear.ToShortDateString()-@item.EndYear</h5>
+                        <p><em>@item.Company - @item.City</em></p>
+                        <p>@item.Description</p>
+                    </div>
+
+
+                    <!-- Edn Resume Item -->
+                }
+            </div>
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

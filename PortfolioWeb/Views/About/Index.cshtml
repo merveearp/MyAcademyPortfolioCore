@@ -1,0 +1,43 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Hakkımda";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="container mt-4">
+   
+    <hr />
+
+    <div class="card shadow p-4">
+        <h3 class="mb-3">@Model.Title</h3>
+        <h4 class="mb-3">@Model.AboutSubTitle</h4>
+        <h4 class="mb-3">@Model.AboutSubTitle2</h4>
+        <p class="mb-4">@Model.Description</p>
+        
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Doğum Tarihi:</strong> @Model.BirthDate.ToShortDateString()</li>
+            <li class="list-group-item"><strong>Şehir:</strong> @Model.City</li>
+            <li class="list-group-item"><strong>Telefon:</strong>@Model.PhoneNumber</li>
+            <li class="list-group-item"><strong>Mezuniyet:</strong> @Model.Graduation</li>
+            <li class="list-group-item"><strong>Web Sitesi:</strong> @Model.WebSite </li>
+            <li class="list-group-item">
+                <strong>Durum:</strong>
+                @(Model.IsAvailable ? "Yeni fırsatlara açığım ✅" : "Şu an aktif olarak bir şirkette çalışıyorum ❌")
+            </li>
+            <li class="list-group-item">
+                <strong>Resim:</strong>
+                <a href="@Model.ImageUrl" target="_blank">@Model.ImageUrl</a>
+                <br />
+                <img src="@Model.ImageUrl" alt="Hakkımda Resim" class="img-thumbnail mt-2" style="max-width:200px;" />
+            </li>
+        </ul>
+        <div class="col-sm-12 mt-3 text-end">
+
+            <a href="/About/EditAbout/@Model.AboutId" class="btn btn-success d-inline-flex"><i class="ti ti-circle-check me-1"></i>Düzenle</a>
+        </div>
+       
+
+    </div>
+</div>
+

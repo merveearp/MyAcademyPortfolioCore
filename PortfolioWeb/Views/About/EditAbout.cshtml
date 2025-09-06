@@ -1,0 +1,87 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Hakkımda Düzenle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="container-fluid pt-4 px-4">
+    <form asp-controller="About" asp-action="EditAbout" method="post">
+        <input type="hidden" asp-for="AboutId">
+        <div class="row g-4 bg-light rounded h-100 p-4">
+            <div class="col-sm-12 col-xl-12">
+                <div class="mb-3">
+                    <label asp-for=Title class="form-label"></label>
+                    <input asp-for=Title class="form-control">
+                    <span asp-validation-for=Title class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=AboutSubTitle class="form-label"></label>
+                    <input asp-for=AboutSubTitle class="form-control">
+                    <span asp-validation-for=AboutSubTitle class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=AboutSubTitle2 class="form-label"></label>
+                    <input asp-for=AboutSubTitle2 class="form-control">
+                    <span asp-validation-for=AboutSubTitle2 class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=Description class="form-label"></label>
+                    <textarea asp-for=Description rows="10" class="form-control" ></textarea>
+                    <span asp-validation-for=Description class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=BirthDate class="form-label"></label>
+                    <input type="date" asp-for=BirthDate rows="10" class="form-control"></input>
+                    <span asp-validation-for=BirthDate class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=PhoneNumber class="form-label"></label>
+                    <input asp-for=PhoneNumber class="form-control">
+                    <span asp-validation-for=PhoneNumber class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=City class="form-label"></label>
+                    <input asp-for=City class="form-control">
+                    <span asp-validation-for=City class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=Email class="form-label"></label>
+                    <input type="email" asp-for=Email class="form-control">
+                    <span asp-validation-for=Email class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=WebSite class="form-label"></label>
+                    <input type="url" asp-for=WebSite class="form-control">
+                    <span asp-validation-for=WebSite class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for=ImageUrl class="form-label"></label>
+                    <input asp-for=ImageUrl class="form-control">
+                    <span asp-validation-for=ImageUrl class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for=Graduation class="form-label"></label>
+                    <input asp-for=Graduation class="form-control">
+                    <span asp-validation-for=Graduation class="text-danger"></span>
+                </div>
+                <div class="mb-3 form-check">
+                    <input asp-for="IsAvailable" class="form-check-input" type="checkbox" />
+                    <label asp-for="IsAvailable" class="form-check-label"></label>
+                    <span asp-validation-for="IsAvailable" class="text-danger"></span>
+                </div>
+            </div>
+           
+            <div class="col-sm-12 mt-3 text-end">
+                <button type="submit" class="btn btn-success d-inline-flex">
+                    <i class="ti ti-rotate-clockwise-2"></i>Güncelle
+                </button>
+                <a href="/About/Index" class="btn btn-warning d-inline-flex ms-2">
+                    <i class="ti ti-arrow-back-up me-1"></i> Geri Dön
+                </a>
+            </div>
+        </div>
+
+    </form>
+</div> 
+ 

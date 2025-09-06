@@ -1,0 +1,47 @@
+﻿@model SocialMedia
+@{
+    ViewData["Title"] = "Sosyal Medya Düzenle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="container-fluid pt-4 px-4">
+    <form asp-controller="SocialMedia" asp-action="UpdateSocialMedia" method="post">
+        <input type="hidden" asp-for="SocialMediaId" />
+
+        <div class="row g-4 bg-light rounded h-100 p-4">
+            <div class="col-sm-12 col-xl-12">
+
+                <div class="mb-3">
+                    <label asp-for="SocialName" class="form-label"></label>
+                    <input asp-for="SocialName" class="form-control" />
+                    <span asp-validation-for="SocialName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="SocialUrl" class="form-label"></label>
+                    <input asp-for="SocialUrl" class="form-control" />
+                    <span asp-validation-for="SocialUrl" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="SocialIcon" class="form-label"></label>
+                    <input asp-for="SocialIcon" class="form-control" />
+                    <span asp-validation-for="SocialIcon" class="text-danger"></span>
+                    <small class="text-muted">
+                        İkon class’ını güncelle (örn: <code>bi bi-linkedin</code>, <code>bi bi-github</code>).
+                    </small>
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 mt-3 text-end">
+                <button type="submit" class="btn btn-success d-inline-flex">
+                    <i class="ti ti-rotate-clockwise-2 me-1"></i> Güncelle
+                </button>
+                <a href="/SocialMedia/Index" class="btn btn-warning d-inline-flex ms-2">
+                    <i class="ti ti-arrow-back-up me-1"></i> Geri Dön
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+

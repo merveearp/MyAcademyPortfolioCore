@@ -1,0 +1,48 @@
+﻿@model List<Education>
+@{
+    ViewData["Title"] = "Eğitim Bilgilerim";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+@{
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Okul Adı</th>
+        <th>Bölüm Adı</th>
+        <th>Başlık</th>
+        <th>Başlama Tarihi</th>
+        <th>Bitiş Tarihi</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+
+            <td>@count</td>
+            <td>@item.SchoolName</td>
+            <td>@item.Department</td>
+            <td>@item.Title</td>
+            <td>@item.StartYear</td>
+            <td>@item.EndYear</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="/Education/DeleteEducation/@item.EducationId" class="btn btn-danger d-inline-flex"><i class="ti ti-alert-triangle me-1"></i>Sil</a>
+                <a href="/Education/UpdateEducation/@item.EducationId" class="btn btn-success d-inline-flex"><i class="ti ti-circle-check me-1"></i>Güncelle</a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<a href="/Education/CreateEducation" class="btn btn-primary"><i class="ti ti-file-plus"></i>Yeni Eğitim Bilgisi Oluştur</a>
+
+

@@ -1,0 +1,25 @@
+﻿@model List<SocialMedia>
+@*
+    _DefaultFooterComponent
+*@
+
+<footer id="footer" class="footer light-background">
+
+    <div class="container">
+        @* <div class="copyright text-center ">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Merve</strong> <span>All Rights Reserved<br></span></p>
+        </div> *@
+        <div class="social-links d-flex justify-content-center">
+            @foreach(var item in Model)
+            {
+                <a href="@item.SocialUrl" target="_blank"><i class="@item.SocialIcon"></i></a>
+            }
+                      
+        </div>
+        <div class="credits">
+            Tasarım: <a href="https://bootstrapmade.com/">BootstrapMade</a> | Merve TÜRK
+        </div>
+
+    </div>
+
+</footer>

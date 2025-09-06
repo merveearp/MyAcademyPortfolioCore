@@ -1,0 +1,43 @@
+﻿@model List<SocialMedia>
+@{
+    ViewData["Title"] = "Sosyal Medya Hesaplarım ";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+@{
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Sosyal Medya</th>
+        <th>Url </th>
+        <th>Ikon </th>
+        <th>İşlemler</th>
+    </tr>
+    
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+
+            <td>@count</td>
+            <td>@item.SocialName</td>
+            <td>@item.SocialUrl</td>
+            <td>
+                <i class="@item.SocialIcon fa-lg"></i>@item.SocialIcon
+            </td>
+            <td>
+                <a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaId" class="btn btn-danger d-inline-flex"><i class="ti ti-alert-triangle me-1"></i>Sil</a>
+                <a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaId" class="btn btn-success d-inline-flex"><i class="ti ti-circle-check me-1"></i>Güncelle</a>
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<a href="/SocialMedia/CreateSocialMedia" class="btn btn-primary"><i class="ti ti-file-plus"></i>Yeni Medya Oluştur</a>
+

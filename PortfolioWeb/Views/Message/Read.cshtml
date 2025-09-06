@@ -1,0 +1,81 @@
+﻿@model UserMessage
+@{
+    ViewData["Title"] = "Mesaj Detayı";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<form method="post" asp-action="Read">
+    <input type="hidden" asp-for="UserMessageId" />
+    <div class="container-fluid pt-4 px-4">
+    <div class="card shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <div>
+                <div class="small text-muted">Konu</div>
+                <h5 class="mb-0">@Model.Subject</h5>
+            </div>
+            <span class="badge @(Model.IsRead ? "bg-success" : "bg-warning text-dark")">
+                @(Model.IsRead ? "Okundu" : "Yeni")
+            </span>
+        </div>
+
+        <div class="card-body">
+            <div class="mb-3">
+                <i class="ti ti-user me-1"></i>
+                <strong>@Model.Name</strong>
+                <a href="mailto:@Model.Email">@Model.Email</a>
+               
+            </div>
+         
+            <pre class="mb-0" style="white-space:pre-wrap;">@Model.MessageBody</pre>
+        </div>
+
+        <div class="card-footer d-flex justify-content-end gap-2">
+            <a  href="/Message/Index" class="btn btn-warning">
+                <i class="ti ti-arrow-back-up me-1"></i> Geri Dön
+            </a>
+                <button type="submit" onclick="readClick(@Model.UserMessageId, event)" class="btn @(Model.IsRead ? "btn-outline-secondary" : "btn-outline-success")">
+                    @(Model.IsRead ? "Okunmadı İşaretle" : "Okundu İşaretle")
+                </button>
+            <button onclick="deleteMessage(@Model.UserMessageId)" class="btn btn-outline-danger">Sil</button>
+        </div>
+    </div>
+</div>
+</form>
+
+<script>
+
+    function deleteMessage(id){
+     Swal.fire({
+          title: "Bu Mesajı Silmek İstediğinize Emin Misiniz?",
+          text: "Bu işlemi geri alamazsınız!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Evet, Sil!",
+          cancelButtonText: "İptal!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href="/Message/Delete/"+ id;
+          }
+        });
+    }
+
+    function readClick(id, e){
+    if (e) {            
+      e.stopPropagation();          // başka handler varsa engelle
+    }
+       Swal.fire({
+      title: "İşlem Başarılı!",
+      icon: "success",
+      showConfirmButton: true,
+      confirmButtonText: "Tamam"      
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/Message/Read/" + id;
+      }
+    });
+    }
+      
+
+
+</script>

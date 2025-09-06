@@ -4,6 +4,7 @@ using PortfolioWeb.Entities;
 
 namespace PortfolioWeb.Controllers
 {
+
     public class CategoryController : Controller
     {
 
