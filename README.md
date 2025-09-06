@@ -1,1 +1,10 @@
 # MyAcademyPortfolioCore
+![Ekran Alıntısı](https://github.com/user-attachments/assets/d8f6f45c-2552-44f0-85ea-fdff42654717)
+![Ekran Alıntısı7](https://github.com/user-attachments/assets/1e439138-5064-45b3-86be-0c2000757e19)
+![Ekran Alıntısı6](https://github.com/user-attachments/assets/42cf443d-e799-4bcc-843e-fa5d4f70238c)
+![Ekran Alıntısı5](https://github.com/user-attachments/assets/34ecb412-4ab1-4dff-ab46-c52da92a3d74)
+![Ekran Alıntısı4](https://github.com/user-attachments/assets/ab5b86e7-dbf0-4d17-83ac-fd0b6784255e)
+![Ekran Alıntısı3](https://github.com/user-attachments/assets/915b3026-a244-4d20-b960-7c0f09ee7deb)
+![Ekran Alıntısı2](https://github.com/user-attachments/assets/1dfdfaff-51cd-40ae-8043-94a8954a0db2)
+![Ekran Alıntısı9](https://github.com/user-attachments/assets/c592437b-ca35-4ac5-a2ae-965c48fac9c2)
+![Ekran Alıntısı8](https://github.com/user-attachments/assets/03850782-cccc-4800-80b7-4257a240322a)
